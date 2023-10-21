@@ -1,5 +1,7 @@
 import discord
 import respnoses
+import os
+from dotenv import load_dotenv
 
 async def send_message(message, user_message, is_priv):
     try:
@@ -9,7 +11,6 @@ async def send_message(message, user_message, is_priv):
         print(e)
 
 def run_discord_bot():
-    TOKEN = "TOKEN"
     intents = discord.Intents.all()
     client = discord.Client(intents=intents)
 
@@ -35,4 +36,5 @@ def run_discord_bot():
         else:
             await send_message(message, user_message, False)
 
-    client.run(TOKEN)
+    load_dotenv()
+    client.run(os.getenv("TOKEN"))
