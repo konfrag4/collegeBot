@@ -26,8 +26,8 @@ def run_discord_bot():
         username = str(message.author)
         user_message = str(message.content)
         channel = str(message.channel)
-        #is_priv = isinstance(message.channel, discord.DMChannel)
-        #await send_message(message, message.content, is_priv)
+        # is_priv = isinstance(message.channel, discord.DMChannel)
+        # await send_message(message, message.content, is_priv)
         print(f"{username} said {user_message} in {channel}")
 
         if user_message[0] == '?':
